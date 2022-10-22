@@ -10,6 +10,20 @@ import { UserListComponent } from './user-list/user-list.component';
 import {UserService} from "./service/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import { ProductListComponent } from './product-list/product-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatListModule} from "@angular/material/list";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,7 +37,21 @@ import { ProductListComponent } from './product-list/product-list.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

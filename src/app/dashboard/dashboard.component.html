@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+
+
+<mat-toolbar>
+  Binaria
+</mat-toolbar>
+
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav opened="true" class="mat-elevation-z8" mode="side">
+    <mat-list>
+      <mat-list-item *ngFor="let option of menuOptions">
+        <a routerLink="{{option.route}}" class="w-100">
+          <button mat-button class="menu-button">
+            <mat-icon fontIcon="{{option.icon}}" class="me-2"></mat-icon>
+            <span>{{option.label}}</span>
+          </button>
+        </a>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

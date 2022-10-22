@@ -1,0 +1,8 @@
+table {
+  width: 100%;
+  border-radius: 10px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
