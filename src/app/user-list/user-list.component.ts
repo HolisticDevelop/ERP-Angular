@@ -84,4 +84,9 @@ export class UserListComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
+
+  saveUser = (user: User) =>  this.userService.save(user).subscribe(result => console.log(result));
+
+  deleteUser = () => console.log('deleting...');
+
 }

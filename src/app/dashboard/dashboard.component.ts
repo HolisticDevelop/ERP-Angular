@@ -2,12 +2,17 @@ import { Component, OnInit } from '@angular/core';
 
 const MENU_OPTIONS = [
   {
-    label: "Home",
+    label: "Dashboard",
     route: "",
-    icon: "home"
+    icon: "dashboard"
   },
   {
     label: "Inventario",
+    route: "product",
+    icon: "inventory"
+  },
+  {
+    label: "Productos",
     route: "product",
     icon: "inventory"
   }
