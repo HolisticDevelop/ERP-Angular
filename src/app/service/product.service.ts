@@ -21,4 +21,8 @@ export class ProductService {
   public save(product: Product){
     return this.http.post(this.productUrl, product)
   }
+
+  public delete(product: Product){
+    return this.http.delete(`${this.productUrl}/${product.id}`)
+  }
 }

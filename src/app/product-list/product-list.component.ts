@@ -89,7 +89,10 @@ export class ProductListComponent implements OnInit {
   }
 
 
-  deleteUser = () => console.log('deleting...');
+  deleteUser = (product: Product) => this.productService.delete(product).subscribe(result => {
+    console.log(result);
+    this.getData();
+  });
 
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {

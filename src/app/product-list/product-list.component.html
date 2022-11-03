@@ -13,7 +13,7 @@
         <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
           <div class="btn-edit" *ngSwitchCase="'isEdit'">
             <button mat-button (click)="element.isEdit = !element.isEdit">Editar</button>
-            <button mat-button (click)="deleteUser()">Eliminar</button>
+            <button mat-button (click)="deleteUser(element)">Eliminar</button>
           </div>
 
           <span *ngSwitchDefault>{{element[col.key]}}</span>

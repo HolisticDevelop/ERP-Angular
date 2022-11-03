@@ -4,11 +4,12 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {LoginComponent} from "./login/login.component";
 import {UserListComponent} from "./user-list/user-list.component";
 import {ProductListComponent} from "./product-list/product-list.component";
+import {AuthenticationGuard} from "./authentication.guard";
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {
-    path: 'dashboard', component: DashboardComponent, children: [
+    path: 'dashboard', canActivate:[AuthenticationGuard], children: [
       {
         path: '',
         component: UserListComponent
@@ -20,7 +21,7 @@ const routes: Routes = [
     ]
   },
   {path: 'login', component: LoginComponent},
-  {path: 'users', component: UserListComponent}
+  // {path: 'users', component: UserListComponent}
 ];
 
 @NgModule({

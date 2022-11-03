@@ -1,5 +1,28 @@
-<div class="container">
-  <div class="row d-flex justify-content-center">
-    213
-  </div>
-</div>
+
+<mat-card>
+  <mat-card-title>Inicio de sesión</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <p>
+        <mat-form-field>
+          <input type="text" formControlName="username"  matInput placeholder="Nombre de usuario">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" formControlName="password" matInput placeholder="Contraseña">
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="error" class="error">
+        {{error}}
+      </p>
+
+      <div class="button">
+        <button mat-button>Iniciar sesión</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
