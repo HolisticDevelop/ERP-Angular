@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {LoginService} from "../service/login.service";
 import {FormControl, FormGroup} from "@angular/forms";
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private loginService: LoginService
   ) { }
 
@@ -37,15 +38,14 @@ export class LoginComponent implements OnInit {
       this.form.value.username,
       this.form.value.password
     ).subscribe(result=>{
-      console.log(result)
+      console.log(result.headers.get("authorization"))
       if (result){
-        console.log(result)
-        this.sessionId = result.sessionId;
+        this.sessionId = result.headers.get("authorization");
         sessionStorage.setItem(
           'token',
           this.sessionId
         );
-        // this.router.navigate(['']);
+        this.router.navigate(['dashboard']);
       }else {
         alert("Authentication failed.")
       }

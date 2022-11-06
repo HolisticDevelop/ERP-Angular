@@ -6,6 +6,11 @@
   /*margin: 10px 0px;*/
 }
 
+.mat-card{
+  padding: 90px;
+  background: greenyellow;
+}
+
 .mat-form-field {
   width: 100%;
   min-width: 300px;

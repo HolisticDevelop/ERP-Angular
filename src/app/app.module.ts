@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserListComponent } from './user-list/user-list.component';
 import {UserService} from "./service/user.service";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { ProductListComponent } from './product-list/product-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatNativeDateModule} from "@angular/material/core";
@@ -25,6 +25,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
+import {RequestInterceptor} from "./request.interceptor";
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import {MatCardModule} from "@angular/material/card";
     DashboardComponent,
     LoginComponent,
     UserListComponent,
-    ProductListComponent
+    ProductListComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,7 @@ import {MatCardModule} from "@angular/material/card";
     MatCardModule,
     ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, {provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,11 +5,12 @@ import {LoginComponent} from "./login/login.component";
 import {UserListComponent} from "./user-list/user-list.component";
 import {ProductListComponent} from "./product-list/product-list.component";
 import {AuthenticationGuard} from "./authentication.guard";
+import {RegisterComponent} from "./register/register.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {
-    path: 'dashboard', canActivate:[AuthenticationGuard], children: [
+    path: 'dashboard', canActivate:[AuthenticationGuard], component: DashboardComponent , children: [
       {
         path: '',
         component: UserListComponent
@@ -21,6 +22,7 @@ const routes: Routes = [
     ]
   },
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
   // {path: 'users', component: UserListComponent}
 ];
 
