@@ -1,1 +1,58 @@
-<p>register works!</p>
+<mat-card>
+  <mat-card-title>Registrarse</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <div class="avatar-container">
+        <div class="avatar"></div>
+      </div>
+
+      <p>
+        <mat-form-field>
+          <input
+            type="text"
+            formControlName="username"
+            matInput
+            placeholder="Nombre de usuario"
+          />
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input
+            type="password"
+            formControlName="password"
+            matInput
+            placeholder="Contraseña"
+          />
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input
+            type="password"
+            formControlName="password2"
+            matInput
+            placeholder="Confirmar contraseña"
+          />
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="error" class="error">
+        {{ error }}
+      </p>
+
+      <div class="button">
+        <button mat-button>Registrar</button>
+      </div>
+
+      <p>
+        <span>¿Ya tiene cuenta? </span>
+        <a routerLink="/login">
+          <span class="fw-bold">Inicie sesión</span>
+        </a>
+      </p>
+    </form>
+  </mat-card-content>
+</mat-card>

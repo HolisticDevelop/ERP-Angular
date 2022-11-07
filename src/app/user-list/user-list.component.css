@@ -1,8 +1,30 @@
-table {
-  width: 100%;
-  border-radius: 10px;
+/*table {*/
+/*  width: 100%;*/
+/*  border-radius: 10px;*/
+/*}*/
+
+/*th.mat-sort-header-sorted {*/
+/*  color: black;*/
+/*}*/
+
+:host{
+  width: 90%;
 }
 
-th.mat-sort-header-sorted {
-  color: black;
+:root{
+  --chart-width: 1200px;
+  --chart-height: 800px;
+}
+
+.chart-wrapper {
+  width: var(--chart-width);
+  min-width: var(--chart-width);
+  max-width: var(--chart-width);
+  height:var(--chart-height);
+  min-height: var(--chart-height);
+  max-height: var(--chart-height);
+  color: red;
+  border-radius: 10px;
+  /*background-image: linear-gradient(to bottom right, $bondi-dark, $bondi-light);*/
+  background-attachment: fixed;
 }

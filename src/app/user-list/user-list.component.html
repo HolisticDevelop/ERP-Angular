@@ -1,44 +1,53 @@
-<h1>Usuarios</h1>
+<!--<h1>Usuarios</h1>-->
 
-<div class="mat-elevation-z8">
-  <button mat-raised-button class="m-2" (click)="addRow()">Agregar usuario</button>
-  <mat-divider></mat-divider>
-  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+<!--<div class="mat-elevation-z8">-->
+<!--  <button mat-raised-button class="m-2" (click)="addRow()">Agregar usuario</button>-->
+<!--  <mat-divider></mat-divider>-->
+<!--  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">-->
 
-    <ng-container matColumnDef="{{col.key}}" *ngFor="let col of columns">
-      <th mat-header-cell  *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by {{col.key}}">
-        {{col.label}}
-      </th>
-      <td mat-cell *matCellDef="let element">
-        <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
-          <div class="btn-edit" *ngSwitchCase="'isEdit'">
-            <button mat-button (click)="element.isEdit = !element.isEdit">Editar</button>
-            <button mat-button (click)="deleteUser()">Eliminar</button>
-          </div>
+<!--    <ng-container matColumnDef="{{col.key}}" *ngFor="let col of columns">-->
+<!--      <th mat-header-cell  *matHeaderCellDef mat-sort-header  sortActionDescription="Sort by {{col.key}}">-->
+<!--        {{col.label}}-->
+<!--      </th>-->
+<!--      <td mat-cell *matCellDef="let element">-->
+<!--        <div [ngSwitch]="col.type" *ngIf="!element.isEdit">-->
+<!--          <div class="btn-edit" *ngSwitchCase="'isEdit'">-->
+<!--            <button mat-button (click)="element.isEdit = !element.isEdit">Editar</button>-->
+<!--            <button mat-button (click)="deleteUser()">Eliminar</button>-->
+<!--          </div>-->
 
-          <span *ngSwitchDefault>{{element[col.key]}}</span>
-        </div>
+<!--          <span *ngSwitchDefault>{{element[col.key]}}</span>-->
+<!--        </div>-->
 
-        <div [ngSwitch]="col.type" *ngIf="element.isEdit">
-          <div class="btn-edit" *ngSwitchCase="'isEdit'">
-            <button mat-button (click)="element.isEdit = !element.isEdit; saveUser(element)">Done</button>
-          </div>
-          <span *ngSwitchCase="'bigint'">{{element[col.key]}}</span>
-          <mat-form-field *ngSwitchDefault  >
-            <input [type]="col.type" matInput [(ngModel)]="element[col.key]">
-          </mat-form-field>
-        </div>
-      </td>
-    </ng-container>
+<!--        <div [ngSwitch]="col.type" *ngIf="element.isEdit">-->
+<!--          <div class="btn-edit" *ngSwitchCase="'isEdit'">-->
+<!--            <button mat-button (click)="element.isEdit = !element.isEdit; saveUser(element)">Done</button>-->
+<!--          </div>-->
+<!--          <span *ngSwitchCase="'bigint'">{{element[col.key]}}</span>-->
+<!--          <mat-form-field *ngSwitchDefault  >-->
+<!--            <input [type]="col.type" matInput [(ngModel)]="element[col.key]">-->
+<!--          </mat-form-field>-->
+<!--        </div>-->
+<!--      </td>-->
+<!--    </ng-container>-->
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+<!--    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--  </table>-->
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                 showFirstLastButtons
-                 aria-label="Select page of elements">
-  </mat-paginator>
+<!--  <mat-paginator [pageSizeOptions]="[5, 10, 20]"-->
+<!--                 showFirstLastButtons-->
+<!--                 aria-label="Select page of elements">-->
+<!--  </mat-paginator>-->
 
+<!--</div>-->
+
+
+<div class="chart-wrapper">
+  <canvas baseChart [type]="'line'"
+                    [datasets]="chartData"
+                    [labels]="chartLabels"
+                    [options]="chartOptions"
+  >
+  </canvas>
 </div>
-

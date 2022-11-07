@@ -23,4 +23,10 @@ export class LoginService {
     return this.http.get<any>(this.loginUrl, {headers: headers, observe: "response"});
 
   }
+
+  public register(username: string, password: string): Observable<any>{
+
+    return this.http.post<any>("/user/add", {username: username, password: password});
+
+  }
 }

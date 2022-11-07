@@ -5,6 +5,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {LiveAnnouncer} from "@angular/cdk/a11y";
 import {MatSort, Sort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
+import {ChartDataset, ChartOptions} from "chart.js";
 
 const COLUMNS = [
   {
@@ -35,6 +36,25 @@ const COLUMNS = [
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+
+  chartData: ChartDataset[] = [
+    {
+      label: '$ millones en ventas',
+      data: [1500, 1600, 1800, 1900, 2200, 2600],
+      pointHitRadius: 15, // expands the hover 'detection' area
+      pointHoverRadius: 8, // grows the point when hovered
+    },
+    {
+      label: '$ millones en compras',
+      data: [800, 900, 1200, 1300, 1500, 1800],
+      pointHitRadius: 15, // expands the hover 'detection' area
+      pointHoverRadius: 8, // grows the point when hovered
+    }
+  ];
+  chartLabels: string[] = [ '2016 Revenue', '2017 Revenue', '2018 Revenue', '2019 Revenue', '2020 Revenue', '2021 Revenue' ];
+
+  chartOptions: ChartOptions = {};
+
 
   users?: User[];
   columns = COLUMNS;

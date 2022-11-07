@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-image: url('https://fondosmil.com/fondo/36341.jpg');
+  /*margin: 10px 0px;*/
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/5087/5087579.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  margin-top: -300px;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-card {
+  padding: 100px;
+  background: rgb(47, 255, 134);
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  z-index: 99;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
