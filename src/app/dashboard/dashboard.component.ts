@@ -12,9 +12,9 @@ const MENU_OPTIONS = [
     icon: "inventory"
   },
   {
-    label: "Productos",
-    route: "product",
-    icon: "inventory"
+    label: "Usuarios",
+    route: "register",
+    icon: "personadd"
   }
 ]
 

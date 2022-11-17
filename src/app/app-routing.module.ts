@@ -18,11 +18,15 @@ const routes: Routes = [
       {
         path: 'product',
         component: ProductListComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       }
     ]
   },
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'login', component: LoginComponent}
+  // {path: 'register', component: RegisterComponent}
   // {path: 'users', component: UserListComponent}
 ];
 

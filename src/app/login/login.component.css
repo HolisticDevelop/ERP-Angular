@@ -4,6 +4,8 @@
   align-items: center;
   height: 100%;
   background-image: url('https://fondosmil.com/fondo/36341.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   /*margin: 10px 0px;*/
 }
 
